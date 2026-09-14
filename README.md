@@ -1,1 +1,1 @@
-docker 구축
+ecr, compose 구축
