@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: "std07/nginx:1.31.3-cd"
+        tags: "seok9/nginx:1.31.3-cd"
     # - name: AWS 자격 증명 설정
     #   uses: aws-actions/configure-aws-credentials@v4
     #   with:
@@ -41,9 +41,10 @@ jobs:
     #     --instance-ids "i-04ded75b962b12fa9" \
     #     --document-name "AWS-RunShellScript" \
     #     --parameters "commands=[
+    #       \"sudo docker pull seok9/nginx:1.31.3-cd\"
     #       \"docker stop nginx-container || true\",
     #       \"docker rm nginx-container\",
-    #       \"docker run -d --name nginx-container -p 80:80 nginx:1.31.3-alpine\",
+    #       \"docker run -d --name nginx-container -p 80:80 seok9/nginx:1.31.3-cd\",
     #     ]" \
     #     --region ${{secrets.AWS_REGION}} \
     #     --comment "Deploying SSM Docker"
