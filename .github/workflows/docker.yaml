@@ -41,10 +41,10 @@ jobs:
         --instance-ids "i-04ded75b962b12fa9" \
         --document-name "AWS-RunShellScript" \
         --parameters "commands=[
-          \"sudo docker pull seok9/nginx:1.31.3-cd\"
+          \"sudo docker pull seok9/nginx:1.31.3-cd\",
           \"docker stop nginx-container || true\",
           \"docker rm nginx-container\",
-          \"docker run -d --name nginx-container -p 80:80 seok9/nginx:1.31.3-cd\",
+          \"docker run -d --name nginx-container -p 80:80 seok9/nginx:1.31.3-cd\"
         ]" \
         --region ${{secrets.AWS_REGION}} \
         --comment "Deploying SSM Docker"
